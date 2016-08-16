@@ -40,6 +40,7 @@
     <footer>
         <div id="footer"
              Designed by Ludwig van de l'Isle,2016
+        </div>
     </footer>
 </fieldset>
 </body>
