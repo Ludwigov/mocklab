@@ -4,8 +4,6 @@
     <title>example</title>
     <link rel="stylesheet" type ="text/css"  href="index.css">
 </head>
-<>
-
 <fieldset>
     <header>
         <img id="logo" src="../mockrepito/images/logo.png">
@@ -20,32 +18,47 @@
     <fieldset>
         <nav>
             <ul>
-                <li><a href="showbugs.html">All Bug Items</a></li><br>
-                <li><a href="showbugs.html">Android Bugs</a></li><br>
-                <li><a href="showbugs.html">iOS Bugs</a></li><br>
-                <li><a href="showbugs.html">Windows Bugs</a></li><br>
-                <li><a href="addbugs.html">Insert Bug</a></li><br>
+                <li><a href="bugs.html">All Bug Items</a></li><br>
+               <ul>
+                <li><a href="addbugs.html">Add Bugs</a></li><br>
+                <li><a href="showbugs.html">Show Bugs</a></li><br>
+               </ul>
+                <li><a href="bugs.html">Android Bugs</a></li><br>
+                <li><a href="bugs.html">iOS Bug</a></li><br>
+                <li><a href="bugs.html">Windows Bugs</a></li><br>
+                <li><a href="bugs.html">Insert Bug</a></li><br>
             </ul>
         </nav>
     </fieldset>
     <fieldset>
         <div id="content">
-            <P>
-            <li><a href="showbugs.php">BugTracker</a></li>
+            <?php
+            include('connecty.php');
 
-            <h2>Keeping track of all the pesky little bugs</h2>
-            </P>
-            <p>Bug Summary Bug Summary Bug Summary Bug Summary
-                Bug Summary Bug Summary Bug Summary Bug Summary
-                Bug Summary Bug Summary Bug Summary Bug Summary
-            </p>
-            <div class="block_1">Lorem</div> <hr />
+           $sql = "Select bugName, bugSummary, BugCategory
+                   From bugtracker"
+               $result = mysqli-query($db,$sql);
+               echo ""
+               <table>
+                 <tr>
+                    <th>bugName </th>
+                    <th>bugSummary</th>
+                    <th>bugCategory</th>
+               </tr> ";
+           if(mysqli_num_rows($result)>0{
 
-            <p>Bug Summary Bug Summary Bug Summary Bug Summary
-                Bug Summary Bug Summary Bug Summary Bug Summary
-                Bug Summary Bug Summary Bug Summary Bug Summary
-            </p>
-        </div>
+           while($row = mysqli_fertch_assoc($result)){
+           echo "<tr>
+
+              <td>".$row['bugName']."</td>
+                    <td>".$row['bugSummary']."</td>
+                    <td>".$row['bugCategory']."</td>
+
+                </tr>";
+}
+}
+    ?>
+            </div>
     </fieldset>
 </main>
 <fieldset>
@@ -54,7 +67,3 @@
             Designed by Ludwig van de l'Isle, 2016
         </div>
     </footer>
-</fieldset>
-</body>
-</html>
-?>
