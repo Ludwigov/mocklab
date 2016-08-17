@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
-<fieldset>
-    <form>
-        <legend>Please complete the following form</legend>
-        <br>
-        <input type="radio">
-        Bug Name
-        <input type="text" name="Required" />
+ <body>
+  <form>
+    <fieldset>
+        <legend>Input Bugs</legend>
+        <div class="Dosa">
+            <fieldset action="addbugs.php" method="post">
+                 <label>Bug Name</label>
+                <label>
+                    <input type="text" name="bugname">
+                </label><br><br>
+                <label>Bug Summary</label>
+                <label>
+                    <textarea rows="3" cols="30"></textarea>
+                </label><br><br>
+                <label> Bug Category
+                <select name="Bug">
+                    <option value="Android">Android</option>
+                    <option value="iOS">iOS</option>
+                    <option value="Windows">Windows</option>
+                </select></label><br><br>
+                <input type="submit" value="Submit" />
+                <br>
+            </fieldset>
+         </div>
+  </fieldset>
+      </form>
+   <footer>
+       Designded by Ludwig van de l' Isle, 2016
+   </footer>
+  </body>
+ </html>
 
-        <input type="radio">
-        Bug Summary
-        <input type="text" name="Required" />
-
-        <input type="radio">
-        Bug Category
-        <input type="text" name="Required" />
-        <br>
-        <input type="submit" value="Submit" />
-    </form>
-</fieldset>
-</body>
-</html>
